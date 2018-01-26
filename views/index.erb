@@ -1,0 +1,16 @@
+<img src="images/<%=incorrect_guesses_left%>.png">
+<h2><%=letters_guessed%></h2>
+<%if !winner && incorrect_guesses_left != 7 %>
+  <form>
+    <h2 id="guess_a_letter">Guess a letter:</h2>
+    <input type="text" name="letter" maxlength="1" size="1" autofocus>
+    <input type="submit" value="Guess!">
+  </form>
+  <h2>Incorrect letters guessed: </h2>
+<%else%>
+  <form method="get" action="/">
+    <input class="inputs" type="submit" value="Play again!" href="/reset">
+  </form>
+<%end%>
+
+<h3><%=all_letters_guessed%></h3>
